@@ -8,10 +8,12 @@ def clique_percolation_method(graph, k = 3):
     cliques = graph.cliques(min=k, max=k)
     num_cliques = len(cliques)
     
+    set_cliques = [set(i) for i in cliques]
+    
     edge_list = list()
     for i in range(0,num_cliques):
         for j in range(i+1, num_cliques):
-            if len(set(list(cliques[i] + cliques[j]))) == k+1:
+            if len(set_cliques[i].intersection(set_cliques[j])) == k-1:
                 edge_list.append((i,j))
     
     clique_graph = Graph(edge_list)
