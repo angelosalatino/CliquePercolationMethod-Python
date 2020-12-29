@@ -33,13 +33,15 @@ def clique_percolation_method(graph, k = 3):
 
 
 def test():
-    g = Graph([(0, 1), (0, 2), (0, 3), (1, 2), (2, 3), (3, 4), (3, 5), (4, 5), (4, 7), (4, 6), (5, 7), (5, 6), (6, 7), (6, 8)])
+    g = Graph()
+    g.add_vertices(["1","2","3","4","5","6","7","8","9"])
+    g.add_edges([("1", "2"), ("1", "3"), ("1", "4"), ("2", "3"), ("3", "4"), ("4", "5"), ("4", "6"), ("5", "6"), ("5", "8"), ("5", "7"), ("6", "8"), ("6", "7"), ("7", "8"), ("7", "9")])
     summary(g)
     plot(g)
     communities = clique_percolation_method(g,3)
     print("Cliques:")
     for count, comm in enumerate(communities):
-        print("{}: {}".format(count,comm))
+        print("{}: {}".format(count,[g.vs[i]["name"] for i in comm]))
 
 def test_karate():
     karate = Graph.Read_GraphML("karate.GraphML")
