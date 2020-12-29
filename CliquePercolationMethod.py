@@ -34,7 +34,7 @@ def test():
     g = Graph([(0, 1), (0, 2), (0, 3), (1, 2), (2, 3), (3, 4), (3, 5), (4, 5), (4, 7), (4, 6), (5, 7), (5, 6), (6, 7), (6, 8)])
     summary(g)
     plot(g)
-    cliques = clique_percolation_method(g,3)
+    communities = clique_percolation_method(g,3)
     print("Cliques:")
     for count, comm in enumerate(communities):
         print("{}: {}".format(count,comm))
