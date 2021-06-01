@@ -134,8 +134,8 @@ def partial_clique_graph(i, set_cliques, minimum, num_cliques):
 
     Returns
     -------
-    edge_list : TYPE
-        DESCRIPTION.
+    edge_list : list
+        List of edges belonging to the iterated node.
 
     """
     edge_list = list()
