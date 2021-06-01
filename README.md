@@ -27,5 +27,19 @@ cpm.text()
 cpm.test_karate()
 ```
 
+# Parameters
+* **graph** : igraph object
+    The _igraph object_ containing the graph.
+* **k** : int, optional
+    Size of the clique. The default is _3_.
+* **workers** : int, optional
+    Number of threads to allocate for running this algorithm. The default is _1_.
+* **attribute** : str, optional
+    The attribute of the vertices to use for displaying nodes within the communities. 
+    For displaying purposes, if vertices have names, the latter can be quite handy to figure out which node belongs to a certain community. 
+    If no attribute is given, the algorithm will display their id. The default is _None_.
+* **verbose** : bool, optional
+    If set to _True_ it shows status updates. The default is _False_.
+
 # Reference
 Palla, Gergely, Imre Derényi, Illés Farkas, and Tamás Vicsek. "Uncovering the overlapping community structure of complex networks in nature and society." Nature 435, no. 7043 (2005): 814-818.
